@@ -77,7 +77,7 @@
 ```
             rosrun gmapping slam_gmapping
 ```
-            可选选项：scan:=you_scan_name _odom_frame:=you_odom_name
+可选选项：scan:=you_scan_name _odom_frame:=you_odom_name
 
 保存地图：
 ```
