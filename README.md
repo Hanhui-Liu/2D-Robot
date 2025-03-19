@@ -25,8 +25,7 @@
             roslaunch ranger_base ranger_mini_v2.launch
 ```
 固件刷新：参考用户手册
-
-        查看原始通信数据：
+查看原始通信数据：
 ```
             sudo modprobe gs_usb
             sudo ip link set can0 up type can bitrate 500000
