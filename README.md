@@ -1,6 +1,8 @@
 # 2D-Robot
 ## 该库实现了基于2D激光雷达和轮速计的机器人自主探索、建图、定位、导航、避障等功能。
-<img src="机器人仿真场景.png" width="200">，<img src="仿真机器人导航.png" width="200">
+
+<img src="机器人仿真场景.png" width="400">，<img src="仿真机器人导航.png" width="400">
+
 **cmd_controller**
 	一个键盘遥控器，能根据键盘输入，输出cmd_vel消息。
 ```
