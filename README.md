@@ -24,8 +24,7 @@
             sudo ip link set can0 up type can bitrate 500000
             roslaunch ranger_base ranger_mini_v2.launch
 ```
-        固件刷新：
-            参考用户手册
+固件刷新：参考用户手册
 
         查看原始通信数据：
 ```
@@ -42,7 +41,7 @@
 ```
             rosrun robot_voice robot_voice_node
 ```
-        订阅的消息话题:/robot/voice
+订阅的消息话题:/robot/voice
 
 **rplidar_ros**
 	雷达驱动包
@@ -50,7 +49,7 @@
 ```
             roslaunch rplidar_ros rplidar_s2.launch
 ```
-        若提示USB权限不够：
+若提示USB权限不够：
 ```
             sudo chmod 666 /dev/ttyUSB0
 ```
@@ -59,73 +58,40 @@
     仿真小车配套的navigation的配置文件和启动文件
 
 **slam_gmapping-melodic-devel**
-	2D激光建图包
-        参考链接：https://wiki.ros.org/slam_gmapping/Tutorials/MappingFromLoggedData
-        启动2D激光雷达：
+2D激光建图包
+参考链接：https://wiki.ros.org/slam_gmapping/Tutorials/MappingFromLoggedData
+启动2D激光雷达：
 ```
             roslaunch rplidar_ros rplidar_s2.launch
 ```
-        启动激光雷达滤波，降低采样率和滤掉：
+启动激光雷达滤波，降低采样率和滤掉：
 ```
             rosrun rplidar_ros low_lidar.py
 ```
-        启动小车，读取里程计信息：
+启动小车，读取里程计信息：
 ```
             sudo modprobe gs_usb
             sudo ip link set can0 up type can bitrate 500000
             roslaunch ranger_base ranger_mini_v2.launch
 ```
-        启动建图节点：
+启动建图节点：
 ```
             rosrun gmapping slam_gmapping
 ```
             可选选项：scan:=you_scan_name _odom_frame:=you_odom_name
 
-        保存地图：
+保存地图：
 ```
             rosrun map_server map_saver -f <map_name>
 ```
 
 
-真实机器人启动流程:
+## 真实机器人启动流程:
+```
     sudo modprobe gs_usb
     sudo ip link set can0 up type can bitrate 500000
     /home/hnu/hnu/robot/gz_robot/robot.sh
-/*
-    启动相机：
-                    roslaunch realsenses_camera rs_camera.launch
-    
-    建图：
-        1、打开思岚的雷达：
 ```
-                    roslaunch rplidar_ros rplidar_s2.launch
-```
-    
-        2、打开机器人底座，读取里程计odometry的数据：
-```
-                    roslaunch ranger_base ranger_mini_v2.launch
-```
-    
-        3、打开坐标变换tf节点：
-```
-                    rosrun robot_setup_tf_tutorial tf_broadcaster
-```
-    
-        4、打开gmapping建图节点：
-```
-                    rosrun gmapping slam_gmapping
-```
-    
-        5、通过遥控器移动机器人，采集地图信息
-    
-        6、利用map_server保存地图：
-```
-                    rosrun map_server map_saver -f my_map
-```
-    
-    导航启动：
-    最后将遥控器打到指令控制模式
-*/
 
 ## 仿真机器人启动流程：
 ```
