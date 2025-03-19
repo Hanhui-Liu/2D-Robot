@@ -2,8 +2,9 @@
 ## 该库实现了基于2D激光雷达和轮速计的机器人自主探索、建图、定位、导航、避障等功能。
 **cmd_controller**
 	一个键盘遥控器，能根据键盘输入，输出cmd_vel消息。
-        启动命令：
-            rosrun cmd_controller cmd_controller_node
+ 、、、
+        rosrun cmd_controller cmd_controller_node
+、、、
     
 **gazebo_car-master**
 	是一个小车的gazebo仿真，提供navigation所有通信接口
