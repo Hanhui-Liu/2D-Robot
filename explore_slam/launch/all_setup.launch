@@ -1,0 +1,19 @@
+<launch>
+    <!--参数配置，运动是否只向前，false 则表示小车可以后退操作-->
+    <arg name="move_forward_only" default="true" />  
+    
+    <!--启动gmapping建图-->
+    <include file="$(find my_robot_name_2dnav)/launch/nav01_slam.launch" />
+ 
+    <!--启动move_base-->
+    <include file="$(find explore_lite_test)/launch/move_base.launch">
+        <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+    </include>
+ 	
+ 	 <!--启动rviz-->
+ 	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find explore_lite_test)/rviz/rviz.rviz"/>
+
+    <!--启动explore_costmap-->
+    <include file="$(find explore_lite)/launch/explore.launch" />
+   
+</launch>

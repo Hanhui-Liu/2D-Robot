@@ -1,0 +1,23 @@
+启动相机：
+                roslaunch realsenses_camera rs_camera.launch
+
+建图：
+    1、打开思岚的雷达：
+                roslaunch rplidar_ros rplidar_s2.launch
+
+    2、打开机器人底座，读取里程计odometry的数据：
+                roslaunch ranger_base ranger_mini_v2.launch
+
+    3、打开坐标变换tf节点：
+                rosrun robot_setup_tf_tutorial tf_broadcaster 
+
+    4、打开gmapping建图节点：
+                rosrun gmapping slam_gmapping
+
+    5、通过遥控器移动机器人，采集地图信息
+
+    6、利用map_server保存地图：
+                rosrun map_server map_saver -f my_map
+
+导航启动：
+

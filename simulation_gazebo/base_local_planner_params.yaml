@@ -1,0 +1,29 @@
+TrajectoryPlannerROS:
+  max_vel_x: 0.45
+  min_vel_x: 0.1
+  max_vel_theta: 3.0
+  min_vel_theta: -3.0
+  min_in_place_vel_theta: 0.4
+
+  acc_lim_theta: 3.2
+  acc_lim_x: 2.5
+  acc_lim_y: 2.5
+
+  holonomic_robot: false
+  pdist_scale: 1.2 #尝试跟随路径的权重，默认0.6
+  gdist_scale: 0.2 #尝试到达目标点的权重，默认0.8
+  occdist_scale: 0 #尝试避开障碍物的权重，默认值是0.01
+  backup_vel: -0.1 #已弃用（使用 escape_vel）：逃逸期间用于后退的速度（以米/秒为单位）。
+                    #请注意，它必须为负数才能使机器人真正反转。正速度将导致机器人在试图逃跑时向前移动。
+  escape_vel: -0.1 #逃生期间的驾驶速度（以米/秒为单位）。
+                    # 请注意，它必须为负数才能使机器人真正反转。正速度将导致机器人在试图逃跑时向前移动。导航新功能 1.3.1
+  yaw_goal_tolerance: 0.05 #达到目标时控制器偏航/旋转的容差（以弧度为单位）
+  xy_goal_tolerance: 0.1 #实现目标时控制器在 x 和 y 距离上的公差（以米为单位）
+  latch_xy_goal_tolerance: false #如果目标容差被锁定，当机器人到达目标 xy 位置时，它将简单地旋转到位，即使它最终超出了目标容差。 - 导航 1.3.1 中的新功能
+  sim_time: 0.5 #前向模拟轨迹的时间（以秒为单位）
+  sim_granularity: 0.025 #给定轨迹上的点之间采取的步长（以米为单位）
+  # angular_sim_granularity:  #给定轨迹上的角度样本之间采用的步长（以弧度为单位）。 - 导航 1.3.1 中的新功能
+  vx_samples: 3 #探索 x 速度空间时使用的样本数
+  vtheta_samples: 20 #探索 theta 速度空间时使用的样本数量
+  controller_frequency: 20 #调用该控制器的频率（以 Hz 为单位）。如果未在控制器的命名空间中设置，则使用 searchParam 从父命名空间读取参数。对于与 move_base 一起使用，这意味着您只需要设置其“controller_Frequency”参数，并且可以安全地不设置该参数。 - 导航 1.3.1 中的新功能
+

@@ -1,0 +1,8 @@
+<launch>
+
+    <include file="$(find rplidar_ros)/launch/rplidar_s2.launch" />
+    <include file="$(find ranger_ros)/launch/ranger_mini_v2.launch" />
+ <node pkg="robot_setup_tf_tutorial" type="tf_broadcaster" name="tf_broadcaster" output="screen">
+ </node>
+
+</launch>
