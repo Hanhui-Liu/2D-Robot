@@ -1,5 +1,6 @@
-各个包的介绍：
-    cmd_controller:相当一个键盘遥控器，能根据键盘输入，输出cmd_vel消息。
+该库实现了基于2D激光雷达和轮速计的机器人自主探索、建图、定位、导航、避障等功能。
+
+    **cmd_controller**:相当一个键盘遥控器，能根据键盘输入，输出cmd_vel消息。
         启动命令：
             rosrun cmd_controller cmd_controller_node
     
