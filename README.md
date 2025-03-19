@@ -92,16 +92,8 @@
     sudo ip link set can0 up type can bitrate 500000
     /home/hnu/hnu/robot/gz_robot/robot.sh
 ```
-
-## 仿真机器人启动流程：
-```
-        roslaunch gazebo_pkg gazebo.launch
-        roslaunch simulation_gazebo robot_navigation.launch
-        rviz -d gz_robot_rviz.rviz
-```
-通过2D Nav Goal设置目标点
         
-## 仿真自主探索：
+## 仿真机器人自主探索：
 ```
 	roslaunch gazebo_pkg gazebo.launch
 	rosrun gmapping slam_gmapping
@@ -109,3 +101,11 @@
 	roslaunch explore_lite explore.launch
 	rviz -d gz_robot_rviz.rviz
 ```
+
+## 仿真机器人建图后导航：
+```
+        roslaunch gazebo_pkg gazebo.launch
+        roslaunch simulation_gazebo robot_navigation.launch
+        rviz -d gz_robot_rviz.rviz
+```
+通过2D Nav Goal设置目标点
